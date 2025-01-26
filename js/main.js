@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   const moins = document.getElementById ("moins");
   const times = document.getElementById ("times");
   const divide = document.getElementById ("divide");
-  const input = document.getElementById ("input");
   const one = document.getElementById ("one");
   const two = document.getElementById ("two");
   const three = document.getElementById ("three");
@@ -16,11 +15,13 @@ document.addEventListener("DOMContentLoaded",()=>{
   const zero = document.getElementById ("zero");
   const clear = document.getElementById ("clear");
   const equal = document.getElementById ("equal");
+  const input = document.getElementById ("input");
 
-  let input1 = 0;
-  let input2 = 0;
 
-  let results = 0;
+  let input1 = 0; //1
+  let input2 = 0; //2
+
+  let results = 0; // result
 
   zero.addEventListener ("click", ()=>{
 
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   one.addEventListener ("click", ()=>{
 
-    input.innerHTML += '1'
+    input.innerHTML += '1' // 1 or 1111
   })
 
   two.addEventListener ("click", ()=>{
@@ -107,12 +108,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     input.innerHTML = results;
   })
 
-
-  
-
-
-
-
+  equal.addEventListener ("click", () =>{
+    input2 = parseFloat(input.innerHTML);
+    results = input1 - input2;
+    input.innerHTML = results;
+  })
 
 });
 
